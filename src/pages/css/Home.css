@@ -34,4 +34,8 @@ button {
   padding: 0;
   margin: 10px;
   font-family: "Courier New", Courier, monospace;
+}
+
+.post {
+  border: 1px solid white;
 }/*# sourceMappingURL=home.css.map */

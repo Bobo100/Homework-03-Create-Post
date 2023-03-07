@@ -1,8 +1,0 @@
-.uploadImageContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.uploadImageContent > * {
-  margin: 10px;
-}/*# sourceMappingURL=UploadImageButton.css.map */

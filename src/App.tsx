@@ -10,16 +10,27 @@ import { Home } from './pages/Home';
 import { NotFoundPage } from './pages/Error';
 import { NewPost } from './pages/NewPost';
 
+import { PostContext, SubmitButtonProps } from './pages/component/PostContent';
+
 function App() {
+
+  const [posts, setPosts] = React.useState<SubmitButtonProps[]>([]);
+
+  const handleSetPosts = (value: SubmitButtonProps) => {
+    setPosts([...posts, value]);
+  }
+
   return (
     <div className="App">
-      <Router basename="/">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/new-post" element={<NewPost />} />
-          <Route path="*" element={<NotFoundPage />}></Route>
-        </Routes>
-      </Router>
+      <PostContext.Provider value={{ posts, handleSetPosts }}>
+        <Router basename="/">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new-post" element={<NewPost />} />
+            <Route path="*" element={<NotFoundPage />}></Route>
+          </Routes>
+        </Router>
+      </PostContext.Provider>
     </div>
   );
 }
