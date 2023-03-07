@@ -1,0 +1,16 @@
+.newpost {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+textarea {
+  min-height: 20vh;
+}
+
+.imagePreivew {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=NewPost.css.map */

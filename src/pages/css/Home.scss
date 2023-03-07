@@ -1,0 +1,50 @@
+.home {
+    display: flex;
+    flex-direction: column;
+
+    width: 40vw;
+
+    & > * {
+        margin: 10px;
+    }
+}
+
+///////////////////////// btn_containter /////////////////////////
+.btn_containter {
+    display: flex;
+
+    justify-content: center;
+}
+
+a {
+    display: block;
+
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+}
+
+.post_btn {
+    font-size: 16px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+
+    box-sizing: border-box;
+
+    color: #000;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+
+    border-radius: 4px;
+
+    padding: 0;
+    margin: 10px;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+///////////////////////// post_containter /////////////////////////
+/// 
