@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <PostContext.Provider value={{ posts, handleSetPosts }}>
-        <Router basename="/">
+        <Router basename="/Homework-03-Create-Post">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/new-post" element={<NewPost />} />
