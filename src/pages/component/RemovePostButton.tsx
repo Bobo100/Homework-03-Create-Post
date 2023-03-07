@@ -1,13 +1,10 @@
 // Remove Post Button Component
-import { useState } from "react";
+import { useContext } from "react";
+import { PostContext } from "./PostContent";
 
 export const RemovePostButton = () => {
-    const [isRemove, setIsRemove] = useState(false);
-    const handleRemove = () => {
-        setIsRemove(true);
-    };
-
+    const { handleRemoveLastPost } = useContext(PostContext);
     return (
-        <button className="post_btn" onClick={handleRemove}>Remove</button>
+        <button className="post_btn" onClick={handleRemoveLastPost}>Remove</button>
     );
 };

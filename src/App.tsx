@@ -17,12 +17,21 @@ function App() {
   const [posts, setPosts] = React.useState<SubmitButtonProps[]>([]);
 
   const handleSetPosts = (value: SubmitButtonProps) => {
-    setPosts([...posts, value]);
-  }
+    const updatedPosts = [...posts, value];
+    setPosts(updatedPosts);
+  };
+
+  // 刪掉最後一個 post
+  const handleRemoveLastPost = () => {
+    if (posts.length > 0) {
+      const updatedPosts = posts.slice(0, posts.length - 1);
+      setPosts(updatedPosts);
+    }
+  };
 
   return (
     <div className="App">
-      <PostContext.Provider value={{ posts, handleSetPosts }}>
+      <PostContext.Provider value={{ posts, handleSetPosts, handleRemoveLastPost }}>
         <Router basename="/Homework-03-Create-Post">
           <Routes>
             <Route path="/" element={<Home />} />

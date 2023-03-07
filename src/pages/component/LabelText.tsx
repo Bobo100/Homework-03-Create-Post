@@ -8,10 +8,6 @@ interface LabelTextProps {
 
 const LabelText: React.FC<LabelTextProps> = ({ label, text }) => {
     return (
-        // <div className="label-text">
-        //     <span className="label">{label}</span>
-        //     <span className="text">{text}</span>
-        // </div>
         <label htmlFor={label}>{text}</label>
     );
 };

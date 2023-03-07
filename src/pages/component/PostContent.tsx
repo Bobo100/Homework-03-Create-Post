@@ -9,9 +9,13 @@ export interface SubmitButtonProps {
 export interface IPostContext {
     posts: SubmitButtonProps[];
     handleSetPosts: (value: SubmitButtonProps) => void;
+    handleRemoveLastPost: () => void;
 }
 
 export const PostContext = createContext<IPostContext>({
     posts: [],
-    handleSetPosts: () => { }
+    handleSetPosts: () => { },
+    handleRemoveLastPost: () => { }
 });
+
+
