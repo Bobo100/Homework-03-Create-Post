@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 
 export interface SubmitButtonProps {
+    id: string;
     title: string;
     content: string;
     image: string;

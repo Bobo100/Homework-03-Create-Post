@@ -11,6 +11,7 @@ import { NotFoundPage } from './pages/Error';
 import { NewPost } from './pages/NewPost';
 
 import { PostContext, SubmitButtonProps } from './pages/component/PostContent';
+import { ModifyPost } from './pages/ModifyPost';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/new-post" element={<NewPost />} />
+            <Route path="/modify-post/:id" element={<ModifyPost />} />
             <Route path="*" element={<NotFoundPage />}></Route>
           </Routes>
         </Router>

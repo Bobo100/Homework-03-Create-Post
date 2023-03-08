@@ -4,6 +4,7 @@ import LabelText from "./component/LabelText";
 import SubmitButton from "./component/SubmitButton";
 import TextArea from "./component/TextArea";
 import InputFile from "./component/InputFile";
+import uuid from "react-uuid";
 import "./css/NewPost.css"
 export const NewPost = () => {
     const [titleInputText, setTitleInputText] = useState('');
@@ -34,7 +35,7 @@ export const NewPost = () => {
                 <InputFile labelId="image" placeholderText="Upload image" onChange={handleFileChange} />
             </div>
 
-            <SubmitButton title={titleInputText} content={contentTextArea} image={imageData} />
+            <SubmitButton id={uuid()} title={titleInputText} content={contentTextArea} image={imageData} />
         </div>
     );
 };
