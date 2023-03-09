@@ -2,12 +2,11 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { PostContext } from "./PostContent";
-import { SubmitButtonProps } from "./PostContent";
-const SubmitButton: React.FC<SubmitButtonProps> = ({ id, title, content, image }) => {
+import { PostContent } from "./PostContent";
+const SubmitButton: React.FC<PostContent> = ({ id, title, content, image }) => {
 
     const { handleSetPosts } = useContext(PostContext);
     const handleSubmit = () => {
-
         const data = {
             id: id,
             title: title,
@@ -23,7 +22,6 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ id, title, content, image }
         }
         handleSetPosts(data)
     }
-
 
     return (
         <NavLink to="/" className="post_btn submitButton" onClick={handleSubmit}>Submit</NavLink>

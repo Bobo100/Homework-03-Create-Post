@@ -25,10 +25,10 @@ export const NewPost = () => {
     return (
         <div className="newpost">
             <LabelText label="title" text="Title" />
-            <InputText labelId="name" text={titleInputText} placeholderText="Enter your name" onChange={handleInput} />
+            <InputText labelId="name" value={titleInputText} placeholderText="Enter your name" onChange={handleInput} />
 
             <LabelText label="content" text="Content" />
-            <TextArea labelId="content" text={contentTextArea} placeholderText="Enter your content" onChange={handleTextArea} />
+            <TextArea labelId="content" value={contentTextArea} placeholderText="Enter your content" onChange={handleTextArea} />
 
             <div className="uploadImageContent">
                 {imageData && <img className="imagePreivew" src={imageData} alt="123" />}

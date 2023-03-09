@@ -1,15 +1,26 @@
-// 修改 按鈕 點擊後，會跳到修改頁面，並且帶入該筆資料的 id，以便修改頁面可以取得該筆資料的資料
+// Submit Button Component
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { PostContext } from "./PostContent";
+import { PostContent } from "./PostContent";
+const ModifyButton: React.FC<PostContent> = ({ id, title, content, image }) => {
 
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+    const { updatePost } = useContext(PostContext);
 
-interface ModifyButtonProps {
-    id: number;
-}
+    const handleModify = () => {
+        const updatedPost = {
+            id: id,
+            title: title,
+            content: content,
+            image: image,
+        };
+        // 要把修改的資料傳回去
+        updatePost(id, updatedPost);
 
-const ModifyButton: React.FC<ModifyButtonProps> = ({ id }) => {
+    };
+
     return (
-        <NavLink to={`/modify-post/${id}`} className="post_btn modifyButton">Modify</NavLink>
+        <NavLink to="/" className="post_btn" onClick={handleModify}>Submit</NavLink>
     )
 }
 

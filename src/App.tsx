@@ -10,14 +10,14 @@ import { Home } from './pages/Home';
 import { NotFoundPage } from './pages/Error';
 import { NewPost } from './pages/NewPost';
 
-import { PostContext, SubmitButtonProps } from './pages/component/PostContent';
+import { PostContext, PostContent } from './pages/component/PostContent';
 import { ModifyPost } from './pages/ModifyPost';
 
 function App() {
 
-  const [posts, setPosts] = React.useState<SubmitButtonProps[]>([]);
+  const [posts, setPosts] = React.useState<PostContent[]>([]);
 
-  const handleSetPosts = (value: SubmitButtonProps) => {
+  const handleSetPosts = (value: PostContent) => {
     const updatedPosts = [...posts, value];
     setPosts(updatedPosts);
   };
@@ -30,9 +30,18 @@ function App() {
     }
   };
 
+  const updatePost = (id: string, updatedPost: PostContent) => {
+    const index = posts.findIndex(post => post.id === id);
+    if (index !== -1) {
+      const newPosts = [...posts];
+      newPosts[index] = updatedPost;
+      setPosts(newPosts);
+    }
+  }
+
   return (
     <div className="App">
-      <PostContext.Provider value={{ posts, handleSetPosts, handleRemoveLastPost }}>
+      <PostContext.Provider value={{ posts, handleSetPosts, handleRemoveLastPost, updatePost }}>
         <Router basename="/Homework-03-Create-Post">
           <Routes>
             <Route path="/" element={<Home />} />

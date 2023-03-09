@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export interface SubmitButtonProps {
+export interface PostContent {
     id: string;
     title: string;
     content: string;
@@ -8,15 +8,17 @@ export interface SubmitButtonProps {
 }
 
 export interface IPostContext {
-    posts: SubmitButtonProps[];
-    handleSetPosts: (value: SubmitButtonProps) => void;
+    posts: PostContent[];
+    handleSetPosts: (value: PostContent) => void;
     handleRemoveLastPost: () => void;
+    updatePost: (id: string, updatedPosts: PostContent) => void;
 }
 
 export const PostContext = createContext<IPostContext>({
     posts: [],
     handleSetPosts: () => { },
-    handleRemoveLastPost: () => { }
+    handleRemoveLastPost: () => { },
+    updatePost: () => { }
 });
 
 

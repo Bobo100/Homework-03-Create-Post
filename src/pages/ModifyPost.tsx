@@ -7,11 +7,12 @@ import { useParams } from "react-router-dom";
 
 import InputText from "./component/InputText";
 import LabelText from "./component/LabelText";
-import SubmitButton from "./component/SubmitButton";
 
 import TextArea from "./component/TextArea";
 import InputFile from "./component/InputFile";
 import { PostContext } from "./component/PostContent";
+
+import ModifyButton from "./component/ModifyButton";
 
 export const ModifyPost = () => {
 
@@ -45,13 +46,14 @@ export const ModifyPost = () => {
         }
     }, [filteredPost]);
 
+
     return (
         <div className="newpost">
             <LabelText label="title" text="Title" />
-            <InputText labelId="name" text={filteredPost?.title ?? titleInputText} placeholderText="Enter your name" onChange={handleInput} />
+            <InputText labelId="name" value={titleInputText} placeholderText="Enter your name" onChange={handleInput} />
 
             <LabelText label="content" text="Content" />
-            <TextArea labelId="content" text={filteredPost?.content ?? contentTextArea} placeholderText="Enter your content" onChange={handleTextArea} />
+            <TextArea labelId="content" value={contentTextArea} placeholderText="Enter your content" onChange={handleTextArea} />
 
             <div className="uploadImageContent">
                 {imageData && <img className="imagePreivew" src={imageData} alt="123" />}
@@ -59,6 +61,8 @@ export const ModifyPost = () => {
             </div>
 
             {/* 這邊要有一個修改確認修改按鈕 */}
+            <ModifyButton id={filteredPost!.id} title={titleInputText} content={contentTextArea} image={imageData} />
+
 
         </div>
     )
