@@ -22,3 +22,9 @@ export const PostContext = createContext<IPostContext>({
 });
 
 
+// export const PostContext = createContext({
+//     posts: [] as PostContent[],
+//     handleSetPosts: (value: PostContent) => { },
+//     handleRemoveLastPost: () => { },
+//     updatePost: (id: string, updatedPosts: PostContent) => { }
+// });
